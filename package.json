@@ -1,0 +1,12 @@
+{
+  "name": "blockchain_js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/seojinsarejj/BlockChain-with-TS.git",
+  "author": "seojinsarejj <s19009@naver.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "prestart": "tsc"
+  }
+}
