@@ -69,17 +69,15 @@ const createNewBlock = (data: string): Block => {
         data,
         newTimeStamp
     );
-        return newBlock;
+    
+    addBlock(newBlock);
+    return newBlock;
 };
-
-
-
-console.log(createNewBlock("hello"), createNewBlock("bye bye"))
 
 const getHashforBlock = (aBlock: Block): string => Block.calculateBlockHash(aBlock.index, aBlock.previousHash, aBlock.timestamp, aBlock.data);
 
 const isBlockValid = (candidateBlock :Block, previousBlock: Block): boolean => {
-    if (Block.validateStructure(candidateBlock)) {
+    if (!Block.validateStructure(candidateBlock)) {
         return false;
     } else if(previousBlock.index + 1 !== candidateBlock.index) {
         return false;
@@ -97,5 +95,12 @@ const addBlock = (candidateBlock: Block): void => {
         blockchain.push(candidateBlock);
     }
 };
+
+
+createNewBlock("second block"); 
+createNewBlock("third block");
+createNewBlock("fourth block")
+
+console.log(blockchain)
 
 export {};
